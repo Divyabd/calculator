@@ -54,21 +54,7 @@ pipeline{
   
 )
      }}
-    stage('download to artifactory')
-   {
-     steps {
-       rtDownload (
-                         serverId: 'ARTIFACTORY_SERVER',
-                     spec: '''{
-                             "files": [
-                                      {
-                                      "pattern": "art-doc-dev-loc/my-app-1.0-SNAPSHOT.jar",
-                                      "target": "bazinga/"
-                                    }
-                                ]
-                            }'''
-                        )
-                        }}
+   
     }
 }
 
