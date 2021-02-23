@@ -7,6 +7,20 @@ pipeline{
     }
   }
   stages {
+     stage('Compile'){
+      steps{
+        echo 'Compile'
+        sh 'mvn compile'
+        
+      }
+     }
+     stage('Test'){
+      steps{
+        echo 'Test'
+        sh 'mvn test'
+        
+      }
+     }
     
           stage("build & SonarQube analysis") {
   
