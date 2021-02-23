@@ -26,7 +26,7 @@ pipeline{
   
             steps {
               withSonarQubeEnv('sonarcloud') {
-                sh 'java -version'
+               
                 sh 'mvn clean package sonar:sonar'
               }
             }
@@ -46,14 +46,12 @@ pipeline{
           "files": [
             {
               "pattern": "target/*.jar",
-              "target": "art-doc-dev-loc"
+              "target": "art-doc-dev-loc1"
             }
          ]
     }''',
  
   
-    buildName: 'holyFrog',
-    buildNumber: '42'
 )
      }}
     stage('download to artifactory')
