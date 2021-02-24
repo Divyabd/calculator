@@ -6,8 +6,8 @@ pipeline{
       args '-v /root/.m2:/root/.m2'
     }
   }
- /* stages {
-     stage('clean'){
+ stages {
+    /*  stage('clean'){
       steps{
         echo 'clean'
         sh 'mvn clean'
