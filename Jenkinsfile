@@ -25,8 +25,8 @@ pipeline{
    stage('package'){
       steps{
         echo 'package'
-        sh mvn clean install -Dbuild.number=-${BUILD_NUMBER}
-         echo ${BUILD_NUMBER}
+        sh 'mvn clean install -Dbuild.number=-${BUILD_NUMBER}'
+        
         
       }
      }
