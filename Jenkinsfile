@@ -15,7 +15,7 @@ pipeline{
       }
      }
      post{
-       failur{
+       failure{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
         }
      }
