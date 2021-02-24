@@ -118,7 +118,25 @@ pipeline{
 
      }
      
+     stage('download from artifactory')
+         {
+            steps{
      
+                rtDownload (
+                    serverId: 'ARTIFACTORY_SERVER',
+                    spec: '''{
+                    "files": [
+                         {
+                             "pattern": "art-doc-dev-loc-new/sample/",
+                             "target": "vs/"
+                        }
+                     ]
+                }''',
+ 
+  
+   
+)
+     }}
     }
   
 }
