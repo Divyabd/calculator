@@ -58,7 +58,7 @@ pipeline{
            
      }
           }
-  /*   stage('SonarQube Quality Gate') { 
+   stage('SonarQube Quality Gate') { 
             steps{
                 timeout(time: 1, unit: 'HOURS') { 
                     script{
@@ -76,7 +76,7 @@ pipeline{
         }
            
      }
-        }*/
+        }
     stage('collect artifact'){
      steps{
      archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
