@@ -28,7 +28,7 @@ pipeline{
         
       }
      }
-   /*  stage('Test'){
+    stage('Test'){
       steps{
         echo 'Test'
         sh 'mvn test'
@@ -42,7 +42,7 @@ pipeline{
      }
         
      }
-    */
+    
           stage("build & SonarQube analysis") {
   
             steps {
