@@ -74,35 +74,7 @@ pipeline{
         }
      }
     }
-       stage('deploy to artifactory')
-     {
-     steps{
-     
-     rtUpload (
-    serverId: 'ARTIFACTORY_SERVER',
-    spec: '''{
-          "files": [
-            {
-              "pattern": "target/*.jar",
-              "target": "art-doc-dev-loc"
-            }
-         ]
-    }''',
- 
-  
-     )
-     }
-      post{
-       failure{
-            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'deploy to artifactory fails', to: 'divyagowdadivya238@gmail.com'
-        }success{
-            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'All build success', to: 'divyagowdadivya238@gmail.com'
-        }
-           
-     }
-     }
-   
-     
+      
      
     }
   
