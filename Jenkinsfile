@@ -10,9 +10,14 @@ pipeline{
      stage('Compile'){
       steps{
         echo 'Compile'
-        sh 'mvn compile'
+        sh 'mvn compil'
         
       }
+     }
+     post{
+       failur{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
+        }
      }
      stage('Test'){
       steps{
@@ -20,6 +25,7 @@ pipeline{
         sh 'mvn test'
         
       }
+        
      }
     
           stage("build & SonarQube analysis") {
