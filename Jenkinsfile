@@ -6,7 +6,7 @@ pipeline{
       args '-v /root/.m2:/root/.m2'
     }
   }
-  stages {
+ /* stages {
      stage('clean'){
       steps{
         echo 'clean'
@@ -20,7 +20,7 @@ pipeline{
         sh 'mvn compile'
         
       }
-     }
+     }*/
    stage('package'){
       steps{
         echo 'package'
@@ -28,7 +28,7 @@ pipeline{
         
       }
      }
-     stage('Test'){
+   /*  stage('Test'){
       steps{
         echo 'Test'
         sh 'mvn test'
@@ -42,7 +42,7 @@ pipeline{
      }
         
      }
-    
+    */
           stage("build & SonarQube analysis") {
   
             steps {
@@ -58,7 +58,7 @@ pipeline{
            
      }
           }
-     stage('SonarQube Quality Gate') { 
+  /*   stage('SonarQube Quality Gate') { 
             steps{
                 timeout(time: 1, unit: 'HOURS') { 
                     script{
@@ -76,7 +76,7 @@ pipeline{
         }
            
      }
-        }
+        }*/
     stage('collect artifact'){
      steps{
      archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
