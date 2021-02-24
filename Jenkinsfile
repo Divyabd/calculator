@@ -21,7 +21,13 @@ pipeline{
         
       }
      }
-   
+   stage('package'){
+      steps{
+        echo 'package'
+        sh 'mvn clean install -Dbuild.number=-${BUILD_NUMBER}'
+        
+      }
+     }
      stage('Test'){
       steps{
         echo 'Test'
