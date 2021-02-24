@@ -19,6 +19,7 @@
      <sonar.projectKey>Divyabd_calculator</sonar.projectKey>
   <sonar.organization>divyabd</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+     <build.number></build.number>
   </properties>
 
   <dependencies>
@@ -74,5 +75,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <finalName>${artifactId}-${version}${build.number}</finalName>
   </build>
 </project>
