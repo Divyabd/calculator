@@ -25,7 +25,7 @@ pipeline{
    stage('package'){
       steps{
         echo 'package'
-        sh 'mvn package build.number=-${BUILD_NUMBER}'
+        sh 'mvn instal build.number=-${BUILD_NUMBER}'
         
         
       }
