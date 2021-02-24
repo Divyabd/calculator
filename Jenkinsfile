@@ -25,9 +25,7 @@ pipeline{
        failure{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
         }
-            success{
-            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
-        }
+            
      }
         
      }
@@ -40,6 +38,12 @@ pipeline{
                 sh 'mvn clean package sonar:sonar'
               }
             }
+              post{
+       failure{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build & SonarQube analysis step fails', to: 'divyagowdadivya238@gmail.com'
+        }
+           
+     }
           }
      stage('SonarQube Quality Gate') { 
             steps{
@@ -53,11 +57,21 @@ pipeline{
                     
                 }
             }
+         post{
+       failure{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: ' SonarQube agate  step fails', to: 'divyagowdadivya238@gmail.com'
+        }
+           
+     }
         }
     stage('collect artifact'){
      steps{
      archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
      }
+        post{
+       failure{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: ' collect to artifactory fails', to: 'divyagowdadivya238@gmail.com'
+        }
      }
        stage('deploy to artifactory')
      {
@@ -76,7 +90,15 @@ pipeline{
  
   
 )
-     }}
+     } post{
+       failure{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'deploy to artifactory fails', to: 'divyagowdadivya238@gmail.com'
+        }success{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'All build success', to: 'divyagowdadivya238@gmail.com'
+        }
+           
+     }
+     }
    
      
      
