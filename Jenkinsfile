@@ -90,7 +90,7 @@ pipeline{
  
   
 )
-     } post{
+      post{
        failure{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'deploy to artifactory fails', to: 'divyagowdadivya238@gmail.com'
         }success{
