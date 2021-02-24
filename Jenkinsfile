@@ -26,6 +26,7 @@ pipeline{
       steps{
         echo 'package'
          mvn clean install -Dbuild.number=-${BUILD_NUMBER}
+         echo ${BUILD_NUMBER}
         
       }
      }
