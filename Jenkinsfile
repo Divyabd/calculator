@@ -21,6 +21,14 @@ pipeline{
         sh 'mvn test'
         
       }
+         post{
+       failure{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
+        }
+            success{
+            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
+        }
+     }
         
      }
     
@@ -70,11 +78,7 @@ pipeline{
 )
      }}
    
-      post{
-       failure{
-            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
-        }
-     }
+     
      
     }
   
