@@ -69,18 +69,14 @@ pipeline{
   
 )
      }}
-     stage('sendig mail')
-     {
-        steps{
-           mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
-        }
-     }
-     
-    }
-   post{
+   
+      post{
        failure{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
         }
      }
+     
+    }
+  
 }
 
