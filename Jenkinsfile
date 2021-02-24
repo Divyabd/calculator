@@ -73,6 +73,7 @@ pipeline{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: ' collect to artifactory fails', to: 'divyagowdadivya238@gmail.com'
         }
      }
+    }
        stage('deploy to artifactory')
      {
      steps{
@@ -89,7 +90,8 @@ pipeline{
     }''',
  
   
-)
+     )
+     }
       post{
        failure{
             mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'deploy to artifactory fails', to: 'divyagowdadivya238@gmail.com'
