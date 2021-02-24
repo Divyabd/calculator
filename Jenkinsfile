@@ -7,7 +7,7 @@ pipeline{
     }
   }
  stages {
-    /*  stage('clean'){
+     stage('clean'){
       steps{
         echo 'clean'
         sh 'mvn clean'
@@ -20,7 +20,7 @@ pipeline{
         sh 'mvn compile'
         
       }
-     }*/
+     
    stage('package'){
       steps{
         echo 'package'
