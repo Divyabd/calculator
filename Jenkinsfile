@@ -7,42 +7,7 @@ pipeline{
     }
   }
  stages {
-    stage('Clean'){
-      steps{
-        echo 'Clean'
-        sh 'mvn clean'
-        
-      }
-     }
-     stage('Compile'){
-      steps{
-        echo 'Compile'
-        sh 'mvn compile'
-        
-      }
-     }
-     
-   stage('package'){
-      steps{
-        echo 'package'
-        sh 'mvn clean install -Dbuild.number=-${BUILD_NUMBER}'
-        
-      }
-     }
-    stage('Test'){
-      steps{
-        echo 'Test'
-        sh 'mvn test'
-        
-      }
-         post{
-       failure{
-            mail bcc: '', body: 'test fails ', cc: '', from: '', replyTo: '', subject: 'build status', to: 'divyagowdadivya238@gmail.com'
-        }
-            
-     }
-        
-     }
+   
     
           stage("build & SonarQube analysis") {
   
