@@ -138,9 +138,14 @@ pipeline{
    
 )
      }
-          sshagent(['ed7c8a08-d943-4a66-a42c-e5e719bdeb9d']){
+            post{
+               success{
+                  sshagent(['ed7c8a08-d943-4a66-a42c-e5e719bdeb9d']){
                     sh 'scp -r /var/jenkins_home/workspace/calculator/target/*.jar ubuntu@54.218.161.70:/home/ubuntu/artifacts'
         }
+               }
+            }
+          
             mail bcc: '', body: 'build was successful ', cc: '', from: '', replyTo: '', subject: 'build successful', to: 'bharath.velisala@gmail.com'}
     }
   
