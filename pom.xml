@@ -19,7 +19,7 @@
      <sonar.projectKey>Divyabd_calculator</sonar.projectKey>
   <sonar.organization>divyabd</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-     <build.number></build.number>
+     
   </properties>
 
   <dependencies>
@@ -32,7 +32,7 @@
   </dependencies>
 
   <build>
-    <finalName>${artifactId}-${version}${build.number}</finalName>
+    
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
