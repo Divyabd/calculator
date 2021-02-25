@@ -111,9 +111,6 @@ pipeline{
        failure{
             mail bcc: '', body: 'deploy to artifactory stage fails ', cc: '', from: '', replyTo: '', subject: 'deploy to artifactory fails', to: 'divyagowdadivya238@gmail.com'
         }
-         success{
-            mail bcc: '', body: 'successfully done ', cc: '', from: '', replyTo: '', subject: 'All build success', to: 'divyagowdadivya238@gmail.com'
-        }
            
      }
 
@@ -141,8 +138,8 @@ pipeline{
             post{
                success{
                   sshagent(['ed7c8a08-d943-4a66-a42c-e5e719bdeb9d']){
-                    sh 'scp -r /var/jenkins_home/workspace/calculator/target/*.jar ubuntu@54.218.161.70:/home/ubuntu/artifacts'
-               mail bcc: '', body: 'build was successful ', cc: '', from: '', replyTo: '', subject: 'build successful', to: 'divyagowdadivya238@gmail.com'
+                    sh 'scp -r /var/jenkins_home/workspace/calculator/target/*.jar ubuntu@54.218.161.70:/home/ubuntu/sample'
+             //  mail bcc: '', body: 'build was successful ', cc: '', from: '', replyTo: '', subject: 'build successful', to: 'divyagowdadivya238@gmail.com'
                   }
 
         }
