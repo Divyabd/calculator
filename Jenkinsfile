@@ -2,8 +2,9 @@
 pipeline{
    agent  {
     docker {
+        image 'jenkins/ssh-agent'
       image 'maven:3.6.3-jdk-11'
-      // image 'jenkins/ssh-agent'
+     
 
       args '-v /root/.m2:/root/.m2'
     }
