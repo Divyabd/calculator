@@ -15,7 +15,8 @@ pipeline{
        agent any
             steps{
                  sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
-            //sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
+            sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
+                    sh 'scp -r /var/jenkins_home/workspace/calculator/target/*.jar ubuntu@54.218.161.70:/home/ubuntu/sample'
             echo "succesfull divya"
         }
             }
