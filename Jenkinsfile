@@ -62,7 +62,7 @@ pipeline{
       steps{
         echo 'package'
         sh 'mvn package'
-        
+      }
         
       }
      }
