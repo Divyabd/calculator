@@ -57,16 +57,7 @@ pipeline{
        failure{
             mail bcc: '', body: 'build & SonarQube analysis stage fails ', cc: '', from: '', replyTo: '', subject: 'build & SonarQube analysis step fails', to: 'divyagowdadivya238@gmail.com'
         }
-                 success{
-                     
-      steps{
-        echo 'package'
-        sh 'mvn package'
-      
-        
-      
-     }
-                 }
+                
            
      }
           }
