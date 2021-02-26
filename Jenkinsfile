@@ -29,14 +29,7 @@ pipeline{
       }
      }
      
-   stage('package'){
-      steps{
-        echo 'package'
-        sh 'mvn package'
-        
-        
-      }
-     }
+  
     stage('Test'){
       steps{
         echo 'Test'
@@ -57,16 +50,27 @@ pipeline{
             steps {
               withSonarQubeEnv('sonarcloud') {
                
-                sh 'mvn clean package sonar:sonar'
+                sh 'mvn sonar:sonar'
               }
             }
               post{
        failure{
             mail bcc: '', body: 'build & SonarQube analysis stage fails ', cc: '', from: '', replyTo: '', subject: 'build & SonarQube analysis step fails', to: 'divyagowdadivya238@gmail.com'
         }
+                 suceess{
+                     stage('package'){
+      steps{
+        echo 'package'
+        sh 'mvn package'
+        
+        
+      }
+     }
+                 }
            
      }
           }
+    
    stage('SonarQube Quality Gate') { 
             steps{
                 timeout(time: 1, unit: 'HOURS') { 
