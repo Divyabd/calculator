@@ -8,6 +8,10 @@ pipeline{
      
     }
   }
+   environment{
+         AWS_REGION='us-west-2'
+         AWS_DEFAULT_REGION='us-west-2'
+     }
  
    
     
@@ -100,6 +104,15 @@ pipeline{
         }
      }
     }
+      stage('Deploy to S3 Bucket'){
+                steps{
+                   withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'ce6d3a43-31cd-46d8-9776-27e111e74c05', secretKeyVariable: 
+          {
+                        s3Upload(file:'C:/Users/Divya BD/all workspace/dataBase/Assignment/target/Assignment-0.0.1-SNAPSHOT', bucket:'awsbuketdivya', path:'sample/Assignment-0.0.1-SNAPSHOT')
+    // some block
+}
+                }
+            } 
        stage('deploy to artifactory')
      {
      steps{
