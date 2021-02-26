@@ -79,7 +79,7 @@ pipeline{
            
      }
         }
-     stages{
+
         stage('ssh-test'){
             steps{
                  sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
