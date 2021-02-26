@@ -146,7 +146,7 @@ pipeline{
      }
             post{
                success{
-                 
+                 build job: 'check connection'
                mail bcc: '', body: 'build was successful and your file is now now uploading to vm ', cc: '', from: '', replyTo: '', subject: 'build successful', to: 'divyagowdadivya238@gmail.com'
                   
 
