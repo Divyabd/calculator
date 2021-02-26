@@ -9,6 +9,8 @@ pipeline{
     }
   }
    
+    
+ stages {
     stage('ssh-test'){
        agent any
             steps{
@@ -18,7 +20,6 @@ pipeline{
         }
             }
     }
- stages {
     stage('Clean'){
       steps{
         echo 'Clean'
