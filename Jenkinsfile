@@ -80,14 +80,7 @@ pipeline{
      }
         }
 
-        stage('ssh-test'){
-            steps{
-                 sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
-            sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
-            echo "succesfull divya"
-        }
-            }
-        }
+     
     stage('collect artifact'){
      steps{
      archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
@@ -124,14 +117,7 @@ pipeline{
      }
 
      }
-     stage('ssh-test'){
-            steps{
-                 sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
-            sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
-                    echo "succesfull divya"
-                 }
-            }
-        }
+
      stage('download from artifactory')
          {
             steps{
