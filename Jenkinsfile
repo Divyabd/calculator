@@ -1,6 +1,12 @@
 
 pipeline{
-   agent any
+   agent  {
+    docker {
+      image 'maven:3.6.3-jdk-11'
+       image 'ssh'
+      args '-v /root/.m2:/root/.m2'
+    }
+  }
  stages {
     stage('Clean'){
       steps{
