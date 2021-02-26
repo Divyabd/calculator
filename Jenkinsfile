@@ -83,6 +83,13 @@ pipeline{
         }
 
      
+     stage('packing'){
+      steps{
+        echo 'package'
+        sh 'mvn package'
+        
+      }
+     }
     stage('collect artifact'){
      steps{
      archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
