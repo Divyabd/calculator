@@ -137,7 +137,7 @@ pipeline{
                     "files": [
                          {
                              "pattern": "art-doc-dev-loc/**",
-                             "target": "vs/"
+                             "target": "target/"
                         }
                      ]
                 }''',
