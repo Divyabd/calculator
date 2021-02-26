@@ -8,14 +8,7 @@ pipeline{
       args '-v /root/.m2:/root/.m2'
     }
   }
- stages {
-    stage('Clean'){
-      steps{
-        echo 'Clean'
-        sh 'mvn clean'
-        
-      }
-     }
+   
     stage('ssh-test'){
        agent any
             steps{
@@ -25,6 +18,15 @@ pipeline{
         }
             }
     }
+ stages {
+    stage('Clean'){
+      steps{
+        echo 'Clean'
+        sh 'mvn clean'
+        
+      }
+     }
+   
      stage('Compile'){
       steps{
         echo 'Compile'
