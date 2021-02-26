@@ -2,11 +2,10 @@
 pipeline{
    agent  {
     docker {
-        image 'jenkins/ssh-agent'
+        
       image 'maven:3.6.3-jdk-11'
-     
-
       args '-v /root/.m2:/root/.m2'
+       image 'jenkins/ssh-agent'
     }
   }
  //  tools{
@@ -15,16 +14,7 @@ pipeline{
    
     
  stages {
-    stage('ssh-test'){
-       agent any
-            steps{
-                 sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
-            sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
-                    sh 'scp -r /var/jenkins_home/workspace/calculator/target/*.jar ubuntu@54.218.161.70:/home/ubuntu/sample'
-            echo "succesfull divya"
-        }
-            }
-    }
+    
     stage('Clean'){
       steps{
         echo 'Clean'
