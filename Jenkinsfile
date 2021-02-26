@@ -3,7 +3,7 @@ pipeline{
    agent  {
     docker {
       image 'maven:3.6.3-jdk-11'
-       image 'ssh'
+       
       args '-v /root/.m2:/root/.m2'
     }
   }
@@ -16,6 +16,7 @@ pipeline{
       }
      }
     stage('ssh-test'){
+       agent any
             steps{
                  sshagent(['de8791f1-fd17-4dce-8d8d-24d240c9d767']) {
             sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.218.161.70'
