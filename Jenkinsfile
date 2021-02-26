@@ -21,6 +21,7 @@ pipeline{
             echo "succesfull divya"
         }
             }
+    }
      stage('Compile'){
       steps{
         echo 'Compile'
