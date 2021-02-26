@@ -9,6 +9,9 @@ pipeline{
       args '-v /root/.m2:/root/.m2'
     }
   }
+   tools{
+      maven:maven-3.6.3
+   }
    
     
  stages {
