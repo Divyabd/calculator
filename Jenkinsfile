@@ -5,12 +5,10 @@ pipeline{
         
       image 'maven:3.6.3-jdk-11'
       args '-v /root/.m2:/root/.m2'
-      // image 'jenkins/ssh-agent'
+     
     }
   }
- //  tools{
- //     maven:maven-3.6.3
-//   }
+ 
    
     
  stages {
